@@ -8,6 +8,7 @@ This README outlines the details for building and deploying Square Delta
 * change into project directory
 * pip install -r requirements
 * Run postgres
+* create db
 * python manage.py migrate
 
 ## Running Client
