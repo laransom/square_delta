@@ -14,12 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
-from django.contrib import admin
-from square_api.resources import ResultResource
-
-result_resource = ResultResource()
+from rest_framework.urlpatterns import format_suffix_patterns
+from square_api import views
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^square_api/', include(result_resource.urls)),
+    url(r'^', include('square_api.urls')),
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns)
